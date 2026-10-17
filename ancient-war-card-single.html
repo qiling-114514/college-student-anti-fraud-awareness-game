@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#17100d">
+  <meta name="format-detection" content="telephone=no">
+  <title>古代战局 · 王权</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <div class="brand">
+        <h1>古代战局</h1>
+        <span class="tagline">王权 · 抉择</span>
+      </div>
+      <div class="header-right">
+        <div class="turn-pill">第 <b id="turnNum">1</b> 回合</div>
+        <button id="restartBtn" class="btn-mini" type="button">重新开始</button>
+      </div>
+    </header>
+
+    <section id="stats" aria-label="国家数值">
+      <div class="stat stat-military">
+        <div class="stat-top"><span class="stat-name">兵力</span><span class="stat-value" id="val-military">50</span></div>
+        <div class="stat-track"><div class="stat-fill" id="fill-military"></div></div>
+      </div>
+      <div class="stat stat-food">
+        <div class="stat-top"><span class="stat-name">粮草</span><span class="stat-value" id="val-food">50</span></div>
+        <div class="stat-track"><div class="stat-fill" id="fill-food"></div></div>
+      </div>
+      <div class="stat stat-people">
+        <div class="stat-top"><span class="stat-name">民心</span><span class="stat-value" id="val-people">50</span></div>
+        <div class="stat-track"><div class="stat-fill" id="fill-people"></div></div>
+      </div>
+      <div class="stat stat-treasury">
+        <div class="stat-top"><span class="stat-name">国库</span><span class="stat-value" id="val-treasury">50</span></div>
+        <div class="stat-track"><div class="stat-fill" id="fill-treasury"></div></div>
+      </div>
+    </section>
+
+    <main id="cardArea">
+      <div id="card" aria-label="事件卡">
+        <div class="card-seal" aria-hidden="true">令</div>
+        <h2 id="cardTitle">—</h2>
+        <p id="cardDesc">—</p>
+        <div id="cardOptions">
+          <div class="option option-left">
+            <span class="option-arrow">◀</span>
+            <span class="option-label" id="labelLeft">左选择</span>
+          </div>
+          <div class="option option-right">
+            <span class="option-label" id="labelRight">右选择</span>
+            <span class="option-arrow">▶</span>
+          </div>
+        </div>
+      </div>
+      <p id="hint">左右滑动卡牌，或点击下方按钮做选择</p>
+    </main>
+
+    <section id="logSection">
+      <div class="log-head">事件纪事</div>
+      <div id="eventLog" aria-label="事件纪事"></div>
+    </section>
+
+    <footer id="actions">
+      <button id="leftBtn" class="action-btn action-left" type="button">◀ 左选</button>
+      <button id="rightBtn" class="action-btn action-right" type="button">右选 ▶</button>
+    </footer>
+  </div>
+
+  <div id="overlay" class="overlay hidden" aria-hidden="true">
+    <div id="modal" class="modal" role="dialog" aria-modal="true">
+      <h2>王朝覆灭</h2>
+      <p id="failText">—</p>
+      <p id="turnResult">—</p>
+      <button id="restartBtn2" class="btn-main" type="button">重新开始</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
