@@ -590,9 +590,10 @@
     restartBtn2.addEventListener('click', restart);
 
     window.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { makeChoice('left'); }
-      else if (e.key === 'ArrowRight') { makeChoice('right'); }
-      else if (e.key === 'r' || e.key === 'R') { restart(); }
+      var key = (e.key || '').toLowerCase();
+      if (key === 'arrowleft' || key === 'a') { makeChoice('left'); }
+      else if (key === 'arrowright' || key === 'd') { makeChoice('right'); }
+      else if (key === 'r') { restart(); }
     });
 
     bindSwipe();

@@ -84,10 +84,13 @@ body {
 .stat-treasury .stat-fill { background: linear-gradient(90deg, #6f5714, var(--treasury-color)); }
 #cardArea {
   flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; padding: 0 6vw; gap: 1.6vh;
+  align-items: center; justify-content: center; padding: 1.2vh 6vw; gap: 1.4vh;
 }
 #card {
-  position: relative; width: 100%; max-width: 420px; padding: 5.5vh 6vw 4vh;
+  position: relative; width: 100%; max-width: 420px;
+  flex: 0 1 auto; min-height: 0; max-height: 100%;
+  display: flex; flex-direction: column; overflow: hidden;
+  padding: 5.5vh 6vw 4vh;
   background: radial-gradient(140% 120% at 20% 0%, #f7ecd0 0%, var(--parchment) 55%, var(--parchment-dark) 100%);
   color: var(--text-dark); border: 1px solid var(--gold-dim); border-radius: 16px;
   box-shadow: 0 0 0 3px #2a1710, 0 0 0 5px var(--gold-dim), 0 14px 30px rgba(0,0,0,0.55);
@@ -100,10 +103,13 @@ body {
   color: #f4e7d0; background: var(--crimson); border-radius: 8px;
   box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18); transform: rotate(4deg); opacity: 0.92;
 }
-#cardTitle { font-size: clamp(20px, 5.8vw, 27px); letter-spacing: 0.06em; color: var(--crimson-deep); margin-bottom: 1.6vh; text-align: center; }
-#cardDesc { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.55; color: #4a3824; text-align: center; max-height: 20vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-#cardOptions { display: flex; justify-content: space-between; gap: 3vw; margin-top: 3vh; padding-top: 2.2vh; border-top: 1px dashed rgba(74,56,36,0.4); }
-.option { display: flex; align-items: center; gap: 1.6vw; font-size: clamp(14px, 4.2vw, 17px); font-weight: 700; color: #4a3824; max-width: 46%; }
+#cardTitle { flex: 0 0 auto; font-size: clamp(20px, 5.8vw, 27px); letter-spacing: 0.06em; color: var(--crimson-deep); margin-bottom: 1.6vh; text-align: center; white-space: nowrap; }
+#cardDesc { flex: 0 0 auto; font-size: clamp(14px, 4.2vw, 17px); line-height: 1.55; color: #4a3824; text-align: center; }
+#cardOptions {
+  flex: 0 0 auto; display: flex; justify-content: center; align-items: center;
+  gap: 10vw; margin-top: 3vh; padding-top: 2.2vh; border-top: 1px dashed rgba(74,56,36,0.4);
+}
+.option { display: flex; align-items: center; gap: 1.6vw; font-size: clamp(14px, 4.2vw, 17px); font-weight: 700; color: #4a3824; white-space: nowrap; }
 .option-right { text-align: right; }
 .option-arrow { color: var(--crimson); font-size: 0.9em; }
 .option-label { line-height: 1.25; }
@@ -160,7 +166,7 @@ body {
 .btn-main:active { transform: translateY(1px); filter: brightness(0.94); }
 @media (max-height: 520px) {
   #stats { gap: 0.8vh 3vw; }
-  #card { padding-top: 3vh; padding-bottom: 2.5vh; }
-  #cardDesc { max-height: 12vh; }
+  #cardArea { justify-content: flex-start; overflow-y: auto; overflow-x: hidden; padding: 0.8vh 6vw; }
+  #card { flex: 0 0 auto; max-height: none; overflow: visible; padding-top: 3vh; padding-bottom: 2.5vh; }
   #logSection { max-height: 12vh; }
 }
