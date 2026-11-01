@@ -1,0 +1,70 @@
+/* ============================================================
+   王朝覆灭弹窗
+   ============================================================ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 6, 4, 0.82);
+  z-index: 50;
+  padding: 8vw;
+  padding-top: calc(8vw + env(safe-area-inset-top));
+  padding-bottom: calc(8vw + env(safe-area-inset-bottom));
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 6vh 7vw;
+  background: radial-gradient(130% 120% at 50% 0%, #f7ecd0 0%, var(--parchment) 55%, var(--parchment-dark) 100%);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-dim);
+  border-radius: 18px;
+  box-shadow:
+    0 0 0 4px #2a1710,
+    0 0 0 6px var(--gold-dim),
+    0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal h2 {
+  font-size: clamp(24px, 7vw, 32px);
+  letter-spacing: 0.12em;
+  color: var(--crimson-deep);
+  margin-bottom: 2.4vh;
+}
+
+.fail-text {
+  font-size: clamp(15px, 4.4vw, 18px);
+  color: #4a3824;
+  margin-bottom: 1.6vh;
+}
+
+.turn-result {
+  font-size: clamp(13px, 3.8vw, 15px);
+  color: #7a6345;
+  margin-bottom: 3.4vh;
+}
+
+.btn-main {
+  width: 100%;
+  min-height: 52px;
+  font-size: clamp(16px, 4.6vw, 19px);
+  font-weight: 700;
+  color: var(--text-light);
+  background: linear-gradient(180deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+  border: 1px solid #000;
+  border-radius: 12px;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.btn-main:active {
+  transform: translateY(1px);
+  filter: brightness(0.94);
+}
